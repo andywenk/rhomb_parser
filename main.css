@@ -1,0 +1,7 @@
+html {background-color: #eee;font-size:1em;}
+body {font-family: Verdana, sans-serif;line-height: 1.2em;}
+pre {line-height:1em;padding-left: 10px;margin-left:-100px;}
+div#out{border: 1px solid #ccc;background-color: white;width:500px; height:100px;overflow:auto;}
+div#out pre{padding-left:10px;margin-left:0;}
+div#tabs {font-size: 0.9em}
+.round_border {-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;}
