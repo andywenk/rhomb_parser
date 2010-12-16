@@ -55,8 +55,8 @@ For the ones how doesn't know yet - this sign # is a rhomb. And it does not soun
 ## TODO
 
 - add tag style like `#url_www.google.com#Text Text Text #/url#`
-- add some configuration like wether to replace all '\n' with '<br />' or not and the like
-- replace '<br />' with '<p></p>' because it should be like that.
+- add some configuration like wether to replace all '\n' with '&lt;br />' or not and the like
+- replace '&lt;br />' with '&lt;p>&lt;/p>' because it should be like that.
 - write tests
  
 ## License BSD
