@@ -35,31 +35,31 @@
 // date: December 2010
  
 var RhombParser = function() {
-	var methods = {
-			url: function(hit) {
-				return this.createLink(hit);
-			},
-			
-			urldata: function(item) {
-			  var text = this.data[hit.toLowerCase()];
+  var methods = {
+    url: function(hit) {
+      return this.createLink(hit);
+    },
 
-			  if(!text) {return '';}
+    urldata: function(item) {
+      var text = this.data[hit.toLowerCase()];
 
-			  return this.createLink(text);
-			},
+      if(!text) {return '';}
 
-			mailto: function(hit) {
-			  return this.createLink(hit, 'mailto:' + hit);
-			},
+      return this.createLink(text);
+    },
 
-			text: function(item) {
-			  var hit = item.match(/#(.+)#/i);
+    mailto: function(hit) {
+      return this.createLink(hit, 'mailto:' + hit);
+    },
 
-			  if(!hit) {return '';}
+    text: function(item) {
+      var hit = item.match(/#(.+)#/i);
 
-			  return this.data[hit[1].toLowerCase()];
-			}
-	}
+      if(!hit) {return '';}
+
+      return this.data[hit[1].toLowerCase()];
+    }
+  }
 	
 	return {
 		setDoParse: function(parse) {
