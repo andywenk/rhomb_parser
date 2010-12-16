@@ -61,7 +61,7 @@ var RhombParser = function() {
     }
   }
 	
-	return {
+  return {
     setDoParse: function(parse) {
       this.doParse = parse;
     },
