@@ -6,13 +6,13 @@ follow these simple rules:
 
 the placeholder in the link 
 
-starts with a `#`
-  and 
-    can be followed by a string as a valid JavaScript function name
+    starts with a `#`
+    and 
+      can be followed by a string as a valid JavaScript function name
 	and has then to be followed by a `_`
 	and has then to be followed by a string as the value for the method
-    or can be followed by a string as the placeholder
-and ends with a `#`
+      or can be followed by a string as the placeholder
+    and ends with a `#`
 
 If using the first variant this would be something like 
   `#url_www.google.com#`
@@ -27,10 +27,10 @@ or
 
 The matching has to be provided as an object to `parseContent()` like so:
 
-  data = {
-    first_name: "Andy",
-    last_name: "Wenk"
-  }
+    data = {
+      first_name: "Andy",
+      last_name: "Wenk"
+    }
 
 ## Why another template parser?
 
