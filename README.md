@@ -38,9 +38,9 @@ First of all, if you are looking for a template engin, please use Jan Lehnardt's
 <https://github.com/janl/mustache.js>.
 
 I wrote Rhomb Parser because I wanted to make life easier for people who are not familiar with
-HTML but have to write snippets of text e.g. in a CMS like system. The only thing these 
-people have to know ist the simple convention for writing placeholders. Means just write text 
-and Rhomb Parser will convert it to HTML including to generate URL's. 
+HTML but have to write snippets of text e.g. in a CMS like system. The only thing you have to 
+know ist the simple convention for writing placeholders. Means just write text and Rhomb Parser 
+will convert it to HTML including to generate URL's. 
 
 It is easy to extend the parser by simply adding new methods. Let's say you want to have a 
 placeholder which is producing a bold word, just add a method "bold" and the placeholder 
@@ -55,6 +55,9 @@ For the ones how doesn't know yet - this sign # is a rhomb. And it does not soun
 ## TODO
 
 - add tag style like `#url_www.google.com#Text Text Text #/url#`
+- add some configuration like wether to replace all '\n' with '<br />' or not and the like
+- replace '<br />' with '<p></p>' because it should be like that.
+- write tests
  
 ## License BSD
 
