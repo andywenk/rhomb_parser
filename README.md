@@ -6,13 +6,13 @@ follow these simple rules:
 
 the placeholder in the link 
 
-    starts with a `#`
+    starts with a #
     and 
       can be followed by a string as a valid JavaScript function name
         and has then to be followed by a `_`
         and has then to be followed by a string as the value for the method
       or can be followed by a string as the placeholder
-    and ends with a `#`
+    and ends with a #
 
 If using the first variant this would be something like 
   `#url_www.google.com#`
