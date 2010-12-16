@@ -62,70 +62,70 @@ var RhombParser = function() {
   }
 	
 	return {
-		setDoParse: function(parse) {
-		  this.doParse = parse;
-		},
-		
-		parseContent: function(body, data) {
-		  this.data = data;
+    setDoParse: function(parse) {
+      this.doParse = parse;
+    },
 
-		  if (!this.doParse) {
-		    return body;
-		  } else {
-		    var placeholder = body.match(/#.[^\s]+#/ig),
-		    		i = placeholder.length,
-		    		item, fun;
+    parseContent: function(body, data) {
+      this.data = data;
 
-		    while(i > 0) {
-		      --i;
-		      item = placeholder[i];
-					fun = item.replace(/#/g, '').split('_')[0];
+      if (!this.doParse) {
+        return body;
+      } else {
+        var placeholder = body.match(/#.[^\s]+#/ig),
+            i = placeholder.length,
+            item, fun;
 
-					if(typeof methods[fun] === "function") {
-						hit = this.getHit(fun, item);
-						if(!hit) {continue;}
-						
-						match = methods[fun].call(this, hit);
-						body = this.replacePlaceholder(item, match, body);
-					} else {
-						match = methods['text'].call(this, item);
-						body = this.replacePlaceholder(item, match, body);
-					}
-		    }
-		  }
-		  return body.replace(/\n/g, '<br />');
-		},
+        while(i > 0) {
+          --i;
+          item = placeholder[i];
+          fun = item.replace(/#/g, '').split('_')[0];
 
-		createLink: function(text, url) {
-		  if(!text) {return '';}
+          if(typeof methods[fun] === "function") {
+            hit = this.getHit(fun, item);
+            if(!hit) {continue;}
 
-		  if(!url) {
-		    var host = text.match(/(http)|(https)/) || '';
-		    url = (host[1]) ? text : ['http://', text].join('');
-		  }
+            match = methods[fun].call(this, hit);
+            body = this.replacePlaceholder(item, match, body);
+          } else {
+            match = methods['text'].call(this, item);
+            body = this.replacePlaceholder(item, match, body);
+          }
+        }
+      }
+      return body.replace(/\n/g, '<br />');
+    },
 
-		  return '<a href="' + url + '">' + text + '</a>';
-		},
-		
-		getHit: function(fun, item) {
-			var regex = new RegExp('#' + fun + '_(.+)#', 'i'),
-					hit = item.match(regex)[1];
-			
-			return hit || '';
-		},
-		
-		// adapted from https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/substring
-		// Example: Replacing a substring within a string
-		replacePlaceholder: function(item, match, body) {
-		  var i = 0, len = body.length;
+    createLink: function(text, url) {
+      if(!text) {return '';}
 
-		  for (i; i < len; i++) {
-		    if (body.substring(i, i + item.length) == item) {
-		      body = body.substring(0, i) + match + body.substring(i + item.length, body.length);
-		    }
-		  }
+      if(!url) {
+        var host = text.match(/(http)|(https)/) || '';
+        url = (host[1]) ? text : ['http://', text].join('');
+      }
 
-		  return body;
-		}
-	}	
+      return '<a href="' + url + '">' + text + '</a>';
+    },
+
+    getHit: function(fun, item) {
+      var regex = new RegExp('#' + fun + '_(.+)#', 'i'),
+      hit = item.match(regex)[1];
+
+      return hit || '';
+    },
+
+    // adapted from https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/substring
+    // Example: Replacing a substring within a string
+    replacePlaceholder: function(item, match, body) {
+      var i = 0, len = body.length;
+
+      for (i; i < len; i++) {
+        if (body.substring(i, i + item.length) == item) {
+          body = body.substring(0, i) + match + body.substring(i + item.length, body.length);
+        }
+      }
+
+      return body;
+    }
+  }	
 }();
