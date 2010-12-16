@@ -34,7 +34,7 @@
 // license: BSD
 // date: December 2010
  
-var RhombParser = function() {
+var RhombParser = (function() {
   var methods = {
     url: function(hit) {
       return this.createLink(hit);
@@ -128,4 +128,4 @@ var RhombParser = function() {
       return body;
     }
   }	
-}();
+})();
