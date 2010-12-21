@@ -40,7 +40,7 @@ var RhombParser = (function() {
       return this.createLink(hit);
     },
 
-    urldata: function(item) {
+    urldata: function(hit) {
       var text = this.data[hit.toLowerCase()];
 
       if(!text) {return '';}
@@ -108,10 +108,9 @@ var RhombParser = (function() {
     },
 
     getHit: function(fun, item) {
-      var regex = new RegExp('#' + fun + '_(.+)#', 'i'),
-          hit = item.match(regex)[1];
+      var regex = new RegExp('#' + fun + '_(.+)#', 'i');
 
-      return hit || '';
+      return item.match(regex)[1] || '';
     },
 
     // adapted from https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/substring
