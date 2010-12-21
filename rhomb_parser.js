@@ -31,9 +31,9 @@
 //		}
 //
 // author: Andy Wenk <andy@nms.de>
-// license: BSD
+// license: BSD http://creativecommons.org/licenses/BSD/
 // date: December 2010
- 
+
 var RhombParser = (function() {
   var methods = {
     url: function(hit) {
@@ -74,7 +74,7 @@ var RhombParser = (function() {
       } else {
         var placeholder = body.match(/#.[^\s]+#/ig),
             i = placeholder.length,
-            item, fun;
+            item, fun, hit;
 
         while(i > 0) {
           --i;
@@ -109,7 +109,7 @@ var RhombParser = (function() {
 
     getHit: function(fun, item) {
       var regex = new RegExp('#' + fun + '_(.+)#', 'i'),
-      hit = item.match(regex)[1];
+          hit = item.match(regex)[1];
 
       return hit || '';
     },
